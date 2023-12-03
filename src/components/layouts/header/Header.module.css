@@ -1,0 +1,15 @@
+.container {
+  background-color: white;
+}
+
+.headerBody {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.listBody {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
