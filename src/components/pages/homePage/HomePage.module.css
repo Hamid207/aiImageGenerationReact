@@ -1,3 +1,7 @@
+.container {
+  background-color: white;
+}
+
 .homePage {
   border: 2px solid #ff0000;
 }
