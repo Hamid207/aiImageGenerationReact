@@ -1,5 +1,7 @@
+import style from "../main/Main.module.css";
+
 const Main = ({ children }) => {
-  return <main>{children}</main>;
+  return <main className={style.main}>{children}</main>;
 };
 
 export default Main;

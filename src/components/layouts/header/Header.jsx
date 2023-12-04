@@ -12,10 +12,14 @@ const Header = () => {
           <div>
             <ul className={style.listBody}>
               <li>
-                <Link to={"/"}>Home</Link>
+                <Link to={"/"} className={style.link}>
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to={"/aiImageGeneratione"}>AI Image Generation</Link>
+                <Link to={"/aiImageGeneratione"} className={style.link}>
+                  AI Image Generation
+                </Link>
               </li>
             </ul>
           </div>
