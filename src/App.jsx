@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Layouts from "./components/layouts/Layouts";
-import HomePage from "./components/pages/homePage/HomePage";
-import AIImageGeneratione from "./components/pages/aIImageGeneratione/AIImageGeneratione";
+import HomePage from "./pagess/home/HomePage";
+import AIImageGeneratione from "./pagess/aIImageGeneratione/AIImageGeneratione";
 import "./assets/styles/global.css";
 
 function App() {

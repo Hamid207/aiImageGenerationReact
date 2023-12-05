@@ -1,5 +1,5 @@
-import style from "../homePage/HomePage.module.css";
-import ImageSearchForm from "../../ui/form/ImageSearchForm";
+import ImageSearchForm from "../../components/ui/form/ImageSearchForm";
+import style from "../home/HomePage.module.css";
 import { useState } from "react";
 
 const HomePage = () => {
@@ -11,7 +11,7 @@ const HomePage = () => {
     // setName("");
   };
   return (
-    <div>
+    <>
       <section className={style.searchSection}>
         <ImageSearchForm
           placeholder="Search AI Image"
@@ -22,8 +22,8 @@ const HomePage = () => {
         />
       </section>
 
-      <section className={style.imageSection}></section>
-    </div>
+      <section></section>
+    </>
   );
 };
 
