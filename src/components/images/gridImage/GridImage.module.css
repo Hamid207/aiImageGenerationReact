@@ -1,0 +1,11 @@
+.backImg {
+  height: 300px;
+  width: 200px;
+  margin: 70px 20px 70px 20px;
+  background-image: url("/public/img1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: gainsboro;
+  border-radius: 10px;
+}
