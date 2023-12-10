@@ -1,7 +1,7 @@
 import ImageSearchForm from "../../components/ui/form/ImageSearchForm";
 import style from "../home/HomePage.module.css";
 import { useState } from "react";
-import Images from "../../components/images/Images";
+import Images from "../../components/myImages/Images";
 
 const HomePage = () => {
   const [name, setName] = useState("");
