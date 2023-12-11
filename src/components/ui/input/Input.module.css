@@ -10,3 +10,7 @@
   font-weight: 500;
   line-height: normal;
 }
+
+.inputStyle:focus {
+  border-color: green;
+}
