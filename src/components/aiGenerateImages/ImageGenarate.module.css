@@ -6,10 +6,10 @@
 }
 
 .grid_body {
-  gap: 20px;
+  gap: 5px;
   margin-top: 0px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   column-gap: 0.5rem;
   align-items: center;
 }

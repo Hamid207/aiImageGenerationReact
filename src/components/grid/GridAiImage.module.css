@@ -1,6 +1,6 @@
 .backImg {
-  height: 300px;
-  width: 200px;
+  height: 400px;
+  width: 300px;
   margin: 70px 20px 70px 20px;
   background-image: url("/public/img1.jpg");
   background-size: cover;

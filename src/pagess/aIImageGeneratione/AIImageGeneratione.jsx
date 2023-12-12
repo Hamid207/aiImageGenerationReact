@@ -4,6 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import ImageGenarate from "../../components/aiGenerateImages/ImageGenarate";
 import axios from "axios";
 
+// axios.defaults.headers.common[
+//   "Authorization"
+// ] = `Bearer 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`;
+
 // const [userPoromt, setUserPrompt] = useState("");
 // const [number, setNumber] = useState(1);
 // const [size, setSize] = useState(" 512 × 768");
@@ -20,14 +24,13 @@ const AIImageGeneratione = () => {
     // if (inputRef.current.value === "") {
     //   return 0;
     // }
-
     const response = await fetch(
       "https://api.openai.com/v1/images/generations",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer openai",
+          Authorization: "Bearer token",
         },
         body: JSON.stringify({
           model: "dall-e-3",
@@ -40,18 +43,18 @@ const AIImageGeneratione = () => {
     );
     let data = await response.json();
     let dataArray = data.data;
-
     setImagUrl(dataArray[0].url);
     setrevisedPrompt(dataArray[0].revised_prompt);
+    console.log(dataArray[0].url);
   };
-  // const token = "openai";
-  // const config = {
-  //   headers: { Authorization: `Bearer ${token}` },
-  // };
 
   // const fetchData = () => {
   //   const res = axios.post("https://api.openai.com/v1/images/generations", {
-  //     headers: { Authorization: `Bearer ${token}` },
+  //     // headers: {
+  //     //   "Content-Type": "application/json",
+  //     //   Authorization:
+  //     //     "Bearer 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",
+  //     // },
   //     model: "dall-e-3",
   //     prompt: `${name}`,
   //     n: 1,
@@ -60,16 +63,25 @@ const AIImageGeneratione = () => {
   //   });
   //   console.log(res);
   // };
-
   useEffect(() => {
-    const serverTest = () => {
-      axios.post("http://localhost:3001/aiImages", {
-        imgUrl: imageUrl,
-        revised_prompt: revisedPrompt,
-        user_porpmt: name,
-      });
+    const fetchData = async () => {
+      const responce = await axios.get("http://localhost:3001/aiImages");
+      setAiImages(responce.data);
+      console.log(responce.data);
     };
-    serverTest();
+    fetchData();
+  }, [imageUrl]);
+  useEffect(() => {
+    if (imageUrl !== "/") {
+      const serverTest = () => {
+        axios.post("http://localhost:3001/aiImages", {
+          imgUrl: imageUrl,
+          revised_prompt: revisedPrompt,
+          user_porpmt: name,
+        });
+      };
+      serverTest();
+    }
   }, [imageUrl]);
 
   const imageSeach = (e) => {
@@ -93,7 +105,7 @@ const AIImageGeneratione = () => {
       </section>
 
       <section>
-        <ImageGenarate img={imageUrl} />
+        <ImageGenarate images={aiImages} />
       </section>
     </>
   );
